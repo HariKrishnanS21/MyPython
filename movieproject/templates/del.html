@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <div class="card" style="width: 18rem;background-color:orange">
+
+              <div class="card-body">
+                  <form method="post">
+                      {% csrf_token %}
+                      <div class="card-text">
+                          <b>Are you sure you want to DELETE?</b>
+                      </div>
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                          <button type="submit" class="btn btn-dark">DELETE</button>
+                          <a href="{% url 'movie:home' %}"><button type="button" class="btn btn-light">CANCEL</button></a>
+                      </div>
+                  </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
