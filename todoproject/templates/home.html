@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body style="background-color:thistle">
+<div class="alert alert-success" role="heading" align="center" >
+    <h4 class="display-4" style="color:firebrick"><b>ToDo</b></h4>
+</div>
+<div class="container">
+    <div class="row">
+        <div style="background-color:teal" class="col-md-5">
+            <h3 style="color:springgreen">Add your Task here</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="task" class="form-control"  placeholder="Enter your task here">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="prio" class="form-control"  placeholder="give the priority">
+                </div>
+                <div class="form-group">
+                    <input type="date" name="date" class="form-control"  placeholder="mark the date">
+                </div>
+                  <button type="submit" class="btn btn-success my-2 my-sm-0">Submit</button>
+            </form>
+            <div>
+                {% for message in messages %}
+                <h1>{{ message }}</h1>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div  class="col-md-7" style="background-color:springgreen">
+            <h3 style="color:teal">Task to be completed</h3>
+            {% for i in t %}
+            <div class="card text-center" >
+                <div class="card-header">
+                    {{i.prio}}
+                </div>
+                <div class="card-body" >
+                    <h5 class="card-title">{{i.task}}</h5>
+
+                    <a href="{% url 'todo:del' i.id %}" class="btn btn-outline-success my-2 my-sm-0">Finished!</a>
+                    <a href="{% url 'todo:edit' i.id %}"><button type="button" class="btn btn-success">Edit</button></a>
+                </div>
+                <div class="card-footer text-muted">
+                   last date {{i.date}}
+                </div>
+            </div><br>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
