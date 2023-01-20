@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block content %}
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <h2 data-aos="fade-up">Join Our Family</h2>
+          <blockquote data-aos="fade-up" data-aos-delay="100">
+            <p> simply complete the registration process and feel the joy of friendship in banking. </p>
+          </blockquote>
+        </div>
+          <div class="col-md-6">
+              <div align="center" class="form2" >
+                <form action="{% url 'bank:register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="display-2 " align="center">
+                        <h2 class="h"><b>REGISTRATION</b></h2>
+                    </div>
+                    <div class="form-group" >
+                        <i class="fa fa-user" style="font-size:25px"></i> <input class=" input1" type="text"  name="uname" aria-describedby="emailHelp" placeholder="enter your username">
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-lock" style="font-size:25px"></i> <input class="input" type="password"  name="pass" placeholder="enter your password">
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-lock" style="font-size:25px"></i> <input class="input" type="password" name="cpass"  placeholder="confirm your password">
+                    </div>
+                    <br><br>
+                    <input type="submit" class="btn-get-started" >
+
+<!--                    <a href="" class="">Register</a>-->
+                </form>
+            </div>
+          </div>
+
+      </div>
+    </div>
+</section>
+
+{% endblock %}

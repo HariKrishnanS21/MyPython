@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css" integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--  new modal-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(function() {
+      $('[data-toggle="modal"]').on('click', function(e) {
+        e.preventDefault();
+        $(this).bsModal();
+      });
+    });
+  </script>
+  <style>
+    .table1{
+        width:700px;
+        height:800px;
+        background:rgba(255,255,255);
+        margin-left:100px;
+    }
+    .t1{
+        color: rgba(27,47,69);
+        padding:10px;
+
+    }
+    .input{
+        width:400px;
+        height:40px;
+        margin-top:30px;
+        border-style:none;
+        background:rgba(27,47,69,0.9);
+        border-radius:25px;
+        color: rgba(255,255,255);
+        padding-left:15px;
+        margin-left:30px;
+    }
+    .input1{
+        width:200px;
+        height:30px;
+        border-style:none;
+        background:rgba(27,47,69,0.9);
+        border-radius:25px;
+        color: rgba(255,255,255);
+        font-size:15px;
+        padding-left:10px;
+    }
+    .input2{
+        width:300px;
+        height:50px;
+        border-style:none;
+        background:rgba(27,47,69,0.9);
+        border-radius:5px;
+        color: rgba(255,255,255);
+        font-size:15px;
+        padding-left:10px;
+    }
+    .radio-group{
+        margin-top:23px;
+    }
+    .rad{
+        font-size:22px;
+        font-weight:500;
+        display:inline-block;
+        vertical-align:middle;
+        color: rgb(27,47,69)
+        position:relative;
+        padding-left:30px;
+        cursor:pointer;
+        margin-right:45px;
+
+    }
+    .rad + .rad{
+        margin-left:20px;
+    }
+    .rad input[type="radio"]{
+        display:none;
+    }
+    .rad span{
+        height:20px;
+        width:20px;
+        border-radius:50%;
+        border:3px solid;
+        border-color: rgb(27,47,69);
+        display:inline;
+        position:absolute;
+
+        top:282px;
+    }
+    .rad span:after{
+        content:"";
+        height:10px;
+        width:10px;
+        background:rgba(27,47,69);
+        display:inline;
+        position:absolute;
+        top:50%;
+        transform:translate(-50%,-50%) scale(0);
+        border-radius:50%;
+        transition:300ms ease-in-out 0s;
+
+    }
+    .rad input[type="radio"]:checked ~ span:after{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    .dob{
+
+        font-size:22px;
+        font-weight:500;
+        display:inline-block;
+        vertical-align:middle;
+        color: rgb(27,47,69);
+        margin-left:24px;
+        margin-top:23px;
+        padding-left:10px;
+    }
+    .name{
+        font-size:22px;
+        font-weight:500;
+        display:inline-block;
+        vertical-align:middle;
+        color: rgb(27,47,69);
+        margin-left:24px;
+
+        padding-left:10px;
+    }
+    .mob{
+        font-size:22px;
+        font-weight:500;
+        color: rgb(27,47,69);
+        margin-left:24px;
+        margin-top:23px;
+        padding-left:10px;
+    }
+
+
+  </style>
+
+</head>
+<body>
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <h2 data-aos="fade-up">Hey Buddy,</h2>
+          <blockquote data-aos="fade-up" data-aos-delay="100">
+            <p> Help me out to know you better. Fill the form and enable us to help you more efficiently.</p>
+          </blockquote>
+        </div>
+          <div class="col-xl-8" >
+            <div>
+                {% for m in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ m }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="table1">
+                <h3 class="t1" align="center">
+                    APPLICATION FORM
+                </h3>
+                <form method="post" action="{% url 'bank:forms' %}">
+                    {% csrf_token %}
+                    <div>
+                        <label class="name">
+                        Name<input type="text"  class="input" name="name">
+                        </label>
+                        <div class="radio-group">
+                            <label class="rad">
+                                <input type="radio" name="gender" value="male">male
+                                <span></span>
+                            </label>
+                            <label class="rad">
+                                <input type="radio" name="gender" value="female">female
+                                <span></span>
+                            </label>
+                            <label class="rad">
+                                <input type="radio" name="gender" value="other">other
+                                <span></span>
+                            </label>
+
+                        </div>
+                        <label class="dob">
+                            D.O.B <input type="date" class="input1" name="dob">
+                        </label>
+                        <label class="dob">
+                            AGE <input type="number" class="input1" name="age">
+                        </label>
+                        <label class="mob">
+                            MOB <input type="text" class="input1" name="mob">
+                        </label>
+                        <label class="mob">
+                            e-mail <input type="email" class="input1" name="mail">
+                        </label>
+                        <label class="mob">
+                            address <input type="text" class="input2" name="address">
+                        </label>
+                        <label class="mob">
+                            District <select class="input1">
+                            <option>select one</option>
+                            <option>alappuzha</option>
+                            <option>ernakulam</option>
+                        </select>
+                        </label>
+                        <label class="mob">
+                            Branch <select class="input1">
+                            <option>select one</option>
+                            <option>kuttanad</option>
+                            <option>ambalappuzha</option>
+                            <option>cherthala</option>
+                            <option>edappally</option>
+                            <option>kakkanad</option>
+                        </select>
+                        </label><br><br><br>
+                        <div align="center">
+                            <input class="btn-get-started" type="submit" value="submit">
+                            <a href="{% url 'bank:logout' %}" class="btn-get-started">logout</a>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+          </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--    <script>-->
+<!--        $("#id_distr").change(function () {-->
+<!--            const url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view-->
+<!--            const distrId = $(this).val();  // get the selected country ID from the HTML input-->
+
+<!--            $.ajax({                       // initialize an AJAX request-->
+<!--                url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )-->
+<!--                data: {-->
+<!--                    'distr_id': distrId       // add the country id to the GET parameters-->
+<!--                },-->
+<!--                success: function (data) {   // `data` is the return of the `load_cities` view function-->
+<!--                    $("#id_branch").html(data);  // replace the contents of the city input with the data that came from the server-->
+<!--                    /*-->
+
+<!--                    let html_data = '<option value="">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>';-->
+<!--                    data.forEach(function (branch) {-->
+<!--                        html_data += `<option value="${branch.id}">${branch.name}</option>`-->
+<!--                    });-->
+<!--                    console.log(html_data);-->
+<!--                    $("#id_branch").html(html_data);-->
+
+<!--                    */-->
+<!--                }-->
+<!--            });-->
+
+<!--        });-->
+<!--    </script>-->
+
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/modal.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
